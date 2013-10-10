@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition extends="default" name="documents/search">
+        <put-attribute name="body" value="/WEB-INF/views/documents/search.jspx"/>
+    </definition>
+    <definition extends="default" name="documents/list">
+        <put-attribute name="body" value="/WEB-INF/views/documents/list.jspx"/>
+    </definition>
+<definition extends="default" name="documents/show">
+        <put-attribute name="body" value="/WEB-INF/views/documents/show.jspx"/>
+    </definition>
+<definition extends="default" name="documents/create">
+        <put-attribute name="body" value="/WEB-INF/views/documents/create.jspx"/>
+    </definition>
+<definition extends="default" name="documents/update">
+        <put-attribute name="body" value="/WEB-INF/views/documents/update.jspx"/>
+    </definition>
+<definition extends="default" name="documents/findDocumentsByNumeroProtocolloLikeOrTipoProtocolloOrStrutturaOrProgettoOrOggettoLikeOrContattoAndDataProtocolloBetween">
+        <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByNumeroProtocolloLikeOrTipoProtocolloOrStrutturaOrProgettoOrOggettoLikeOrContattoAndDataProtocolloBetween.jspx"/>
+    </definition>
+<definition extends="default" name="documents/findDocumentsByNumeroProtocolloLikeOrTipoProtocolloLikeOrStrutturaOrProgettoOrOggettoLikeOrContattoAndDataProtocolloBetween">
+        <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByNumeroProtocolloLikeOrTipoProtocolloLikeOrStrutturaOrProgettoOrOggettoLikeOrContattoAndDataProtocolloBetween.jspx"/>
+    </definition>
+<definition extends="default" name="documents/findDocumentsByNumeroProtocolloLikeAndTipoProtocolloLikeAndStrutturaLikeAndProgettoLikeAndOggettoLikeAndContattoLikeAndDataProtocolloBetween">
+        <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByNumeroProtocolloLikeAndTipoProtocolloLikeAndStrutturaLikeAndProgettoLikeAndOggettoLikeAndContattoLikeAndDataProtocolloBetween.jspx"/>
+    </definition>
+<definition extends="default" name="documents/findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto">
+        <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto.jspx"/>
+    </definition>
+<definition extends="default" name="documents/findDocumentsByTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByTemplate.jspx"/>
+    </definition>
+</tiles-definitions>

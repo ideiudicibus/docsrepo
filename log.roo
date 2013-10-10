@@ -1,0 +1,181 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-02 15:52:13
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-02 15:56:35
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-02 16:54:53
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-02 16:57:10
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-02 16:57:17
+entity jpa --class ~.domain.Document
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-02 17:09:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-02 17:09:40
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-02 17:12:29
+entity jpa --class ~.domain.Document
+field string --fieldName nome --notNull --sizeMax 100
+field string --fieldName numeroProtocollo --notNull
+// [failed] field date --fieldName data --type java.util.Date --notNull --timeFormat SHORT 
+field date --fieldName dataDocumento --type java.util.Date --notNull --timeFormat SHORT 
+enum type --class ~.domain.TipoProtocollo
+enum constant --name ENTRATA
+enum constant --name USCITA
+field enum --fieldName tipoProtocollo --type ~.domain.TipoProtocollo
+field enum --fieldName tipoProtocollo --type ~.domain.TipoProtocollo --class ~.domain.Document
+entity jpa --class ~.domain.Struttura 
+field string --fieldName descrizione --notNull --sizeMax 255
+field reference --fieldName struttura --type ~.domain.Struttura --cardinality ONE_TO_ONE
+field reference --fieldName struttura --type ~.domain.Struttura --cardinality ONE_TO_ONE --class ~.domain.Document
+entity jpa --class ~.domain.Progetto
+field string --fieldName descrizione --notNull --sizeMax 255
+entity jpa --class ~.domain.Contatto
+field string --fieldName email --unique
+field reference --type ~.domain.Contatto --fieldName contatto --cardinality ONE_TO_ONE
+field reference --type ~.domain.Contatto --fieldName contatto --cardinality ONE_TO_ONE --class ~.domain.Document
+field string --fieldName  nomeFile --notNull 
+field other --fieldName content --type java.lang.Byte --notNull 
+field string --fieldName contentType --notNull
+controller all --package ~.web
+perform clean
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-02 17:47:56
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-02 17:48:29
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-02 17:49:01
+perform clean
+backup
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-02 17:49:41
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-03 18:23:54
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-03 18:24:56
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-03 18:27:35
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-03 18:41:12
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 06:48:41
+dependency add --groupId org.apache.commons --artifactId commons-io --version 1.3.2
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 06:49:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 07:05:09
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 07:05:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 07:40:17
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 07:41:16
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 07:41:23
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 07:42:09
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 15:04:57
+field date --fieldName dataProtocollo --type java.util.Calendar --class ~.domain.Document
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 15:06:06
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 15:06:13
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 15:08:17
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 17:46:45
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 17:48:58
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-04 17:49:05
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-04 17:50:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-06 09:17:34
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 11:22:14
+theme list
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 14:28:48
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-07 14:43:40
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 14:43:48
+finder list --class ~.domain.Document
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-07 14:45:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 14:45:57
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-07 14:48:14
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 17:46:00
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-07 18:02:53
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 18:06:41
+finder list --class ~.domain.Document --filter oggetto,numeroProtocollo,tipoProtocollo,progetto,struttura,contatto,dataProtocollo
+finder add --finderName findDocumentsByDataProtocolloBetween
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-07 18:10:31
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 18:10:39
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-07 18:12:38
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 18:52:28
+// [failed] finder list --class ~.domain.Document --depth 9 --filter dataProtocollo,struttura,progetto
+finder list --class ~.domain.Document --depth 3 --filter dataProtocollo,struttura,progetto
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-07 19:02:27
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-07 19:02:45
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 07:37:11
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 07:37:59
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 13:23:51
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 13:25:28
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 13:25:35
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 13:25:47
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 15:38:11
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 15:38:30
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 15:38:37
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 17:16:41
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 18:05:50
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 18:09:21
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 18:09:27
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 18:09:37
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 18:12:29
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 18:16:24
+finder list --depth 3 --filter oggetto,numeroProtocollo,tipoProtocollo,progetto,struttura,contatto,dataProtocollo --class ~.domain.Document
+// [failed] finder list --depth 7 --filter oggetto,numeroProtocollo,tipoProtocollo,progetto,struttura,contatto,dataProtocollo --class ~.domain.Document
+// [failed] finder list --depth 4 --filter oggetto,numeroProtocollo,tipoProtocollo,progetto,struttura,contatto,dataProtocollo --class ~.domain.Document
+finder list --depth 3 --filter oggetto,numeroProtocollo,tipoProtocollo,progetto,struttura,contatto,dataProtocollo --class ~.domain.Document
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 18:41:34
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 18:43:15
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-08 18:43:22
+// [failed] finder add --finderName findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenAndStrutturaOrProgettoOrContatto --class ~.domain.Document
+// [failed] finder list 
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-08 18:49:31
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 08:29:47
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 08:32:47
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 08:33:58
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 08:34:40
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 08:47:45
+finder list --depth 2 --class ~.domain.Document
+finder list --depth 3 --class ~.domain.Document
+// [failed] finder list --depth 4 --class ~.domain.Document 
+finder add --finderName findDocumentsByTipoProtocolloOrStrutturaOrSizeNotEquals --class ~.domain.Document
+finder add --finderName findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto --class ~.domain.Document
+dependency add --groupId org.apache.pdfbox --artifactId pdfbox --version 1.8.2
+help bean
+interface --class ~.service.ThumbnailService
+class --class ~.service.ThumbnailServiceImpl
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 13:05:18
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 13:05:26
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 13:17:14
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 15:45:59
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 15:50:14
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 15:50:21
+web mvc install language --code it
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 15:51:19
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 18:12:23
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 18:14:16
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 18:16:51
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 18:18:12
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-09 18:18:42
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-09 18:23:19
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-10 09:36:51
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-10 09:38:15

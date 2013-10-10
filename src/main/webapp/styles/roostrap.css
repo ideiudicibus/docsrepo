@@ -1,0 +1,22 @@
+.utilbox {width: 48px;}
+
+body{ padding-top: 62px;}
+
+form {margin-bottom: 0px;}
+
+
+.input-width400{width:400px;}
+
+
+.navbar-default .navbar-brand {
+	background-color:#71bbd2;
+	color:white;
+}
+
+.brand {height: 25px;}
+
+
+.navbar-default .navbar-brand a:hover {
+	background-color:#71bbd2;
+	color:white;
+}
