@@ -61,24 +61,7 @@ public class DocumentController {
 		binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
     }
 	
-	
-	@RequestMapping(params="query",method = RequestMethod.GET, produces = "text/html")
-	public String searchDocuments(HttpServletRequest request,Model uiModel){
-		populateEditForm(uiModel, new Document());
-        List<String[]> dependencies = new ArrayList<String[]>();
-        if (Progetto.countProgettoes() == 0) {
-            dependencies.add(new String[] { "progetto", "progettoes" });
-        }
-        if (Struttura.countStrutturas() == 0) {
-            dependencies.add(new String[] { "struttura", "strutturas" });
-        }
-        if (Contatto.countContattoes() == 0) {
-            dependencies.add(new String[] { "contatto", "contattoes" });
-        }
-        uiModel.addAttribute("dependencies", dependencies);
-        
-        return "documents/search";
-	}
+
 	
 
 
@@ -88,6 +71,7 @@ public class DocumentController {
     					 	Model model,
     					 	@RequestParam("content") MultipartFile content,
     					 	HttpServletRequest request) {
+    	
     	
     	
     	document.setContentType(content.getContentType());
@@ -191,7 +175,7 @@ public class DocumentController {
         return null;
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+   /* @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") Long id, Model model,HttpServletRequest httpServletRequest) {
     	Document document= Document.findDocument(id);
     	//document.setUrl(httpServletRequest.getRequestURL()+"/showdoc/"+id);
@@ -200,7 +184,30 @@ public class DocumentController {
         model.addAttribute("document", document);
         return "documents/update";
     }
+    */
+    @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
+    public String updateForm(@PathVariable("id") Long id, Model uiModel) {
+        populateEditForm(uiModel, Document.findDocument(id));
+        return "documents/update";
+    }
     
+    @RequestMapping(value="update",method = RequestMethod.PUT, produces = "text/html")
+    public String updateDocument(Document document, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    	//partial copy according to update form
+    	Document tmpDoc=Document.findDocument(document.getId());
+    	document.setContent(tmpDoc.getContent());
+    	document.setContentType(tmpDoc.getContentType());
+    	document.setSize(tmpDoc.getSize());
+    	document.setThumbnail(tmpDoc.getThumbnail());
+//    	if (bindingResult.hasErrors()) {
+//            populateEditForm(uiModel, document);
+//            return "documents/update";
+//        }
+    	
+        uiModel.asMap().clear();
+        document.merge();
+        return "redirect:/documents/" + encodeUrlPathSegment(document.getId().toString(), httpServletRequest);
+    }
 	
 	/*
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")

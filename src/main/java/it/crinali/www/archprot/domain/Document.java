@@ -10,19 +10,21 @@ import javax.persistence.Query;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.roo.classpath.operations.jsr303.RooUploadedFile;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(finders = {"findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto" })
+@DynamicUpdate
 public class Document {
     /**
      */

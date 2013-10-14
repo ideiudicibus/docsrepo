@@ -179,3 +179,20 @@ exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-10 09:36:51
 exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-10 09:38:15
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-10 14:33:32
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-10 14:33:47
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-10 14:33:58
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-10 14:34:30
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-10 14:34:58
+entity jpa --class ~.domain.DocumentPdf
+field file --fieldName file --contentType PDF
+field string --fieldName oggetto --sizeMax 40 --notNull 
+web mvc scaffold --class ~.web.DocumentPdfController --backingType ~.domain.DocumentPdf --path documenti
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-10 14:46:03
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-10 15:14:48
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-10 15:15:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-11 17:52:00

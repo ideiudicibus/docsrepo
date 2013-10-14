@@ -18,4 +18,19 @@
         <field:file field="thumbnail" id="c_it_crinali_www_archprot_domain_Document_thumbnail" render="false" z="user-managed"/>
     </form:multi>
     <form:dependency dependencies="${dependencies}" id="d_it_crinali_www_archprot_domain_Document" render="${not empty dependencies}" z="7SwqU/TGTlNrCASFEoEGFERpBy8="/>
+<script type="text/javascript">
+
+function TestFileType( fileName, fileTypes ) {
+	if (!fileName) return;
+
+	dots = fileName.split(".")
+	//get the part AFTER the LAST period.
+	fileType = "." + dots[dots.length-1];
+
+	return (fileTypes.join(".").indexOf(fileType) != -1) ?
+	alert('That file is OK!') : 
+	alert("Please only upload files that end in types: \n\n" + (fileTypes.join(" .")) + "\n\nPlease select a new file and try again.");
+	}
+
+</script>
 </div>

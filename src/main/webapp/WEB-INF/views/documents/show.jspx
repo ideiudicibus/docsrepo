@@ -16,7 +16,8 @@
         <field:display date="true" dateTimePattern="${document_dataprotocollo_date_format}" field="dataProtocollo" id="s_it_crinali_www_archprot_domain_Document_dataProtocollo" object="${document}" z="fkGNlkz0l+wDLtZ+Ouj0GjWHF0I="/>
         <field:display field="url" id="href_s_it_crinali_www_archprot_domain_Document_url" label="Scarica documento" object="${document}" z="user-managed"/>
         <!-- <field:frame field="url" id="s_it_crinali_www_archprot_domain_Document_url" label="Documento" object="${document}" z="user-managed"/>-->
-        <field:frameParametricSource field="thumbnail" id="s_it_crinali_www_archprot_domain_Document_thumbnail" label="Documento" object="${document}" sourceService="previewdoc/1" z="user-managed"/>
+        <field:frameParametricSource field="thumbnail" id="s_it_crinali_www_archprot_domain_Document_thumbnail" label="Documento" object="${document}" sourceService="previewdoc" z="user-managed"/>
         <field:display field="url" id="s_it_crinali_www_archprot_domain_Document_url" object="${document}" z="133jHO+zR3Q8wUit9zQ+fNfwbnU="/>
     </page:show>
+
 </div>
