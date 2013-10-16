@@ -4,10 +4,13 @@ import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
 import java.awt.image.RenderedImage;
+import java.awt.image.WritableRaster;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Hashtable;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -23,8 +26,8 @@ public class ThumbnailServiceImpl implements ThumbnailService {
 	
 	private static final Log log = LogFactory.getLog(ThumbnailServiceImpl.class);
 	
-	private static final int IMG_WIDTH = 100;
-	private static final int IMG_HEIGHT = 100;
+	private static final int IMG_WIDTH = 800;
+	private static final int IMG_HEIGHT = 600;
 
 	public byte[] generateThumbnail(byte [] pdf	){
 		ByteArrayInputStream bArray = new ByteArrayInputStream(pdf);
@@ -35,10 +38,10 @@ public class ThumbnailServiceImpl implements ThumbnailService {
 			document = PDDocument.load( bArray );
 			List<PDPage> pages = document.getDocumentCatalog().getAllPages();
 			PDPage page=pages.get(0);
-			RenderedImage pageImage=page.convertToImage();
-			//BufferedImage resizeImageHintPng = resizeImageWithHint(pageImage,BufferedImage.TYPE_BYTE_GRAY);
+//			RenderedImage pageImage=page.convertToImage();
+			BufferedImage resizeImageHintPng = resizeImageWithHint(convertRenderedImage(page.convertToImage()),BufferedImage.TYPE_BYTE_GRAY);
 			ByteArrayOutputStream baos=new ByteArrayOutputStream();
-			ImageIO.write(pageImage,"png",baos);
+			ImageIO.write(resizeImageHintPng,"png",baos);
 			pages=null;
 			page=null;
 			byte [] retValue= baos.toByteArray();
@@ -73,4 +76,25 @@ public class ThumbnailServiceImpl implements ThumbnailService {
  
 	return resizedImage;
     }
+    
+	private BufferedImage convertRenderedImage(RenderedImage img) {
+		if (img instanceof BufferedImage) {
+			return (BufferedImage)img;	
+		}	
+		ColorModel cm = img.getColorModel();
+		int width = img.getWidth();
+		int height = img.getHeight();
+		WritableRaster raster = cm.createCompatibleWritableRaster(width, height);
+		boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
+		Hashtable properties = new Hashtable();
+		String[] keys = img.getPropertyNames();
+		if (keys!=null) {
+			for (int i = 0; i < keys.length; i++) {
+				properties.put(keys[i], img.getProperty(keys[i]));
+			}
+		}
+		BufferedImage result = new BufferedImage(cm, raster, isAlphaPremultiplied, properties);
+		img.copyData(raster);
+		return result;
+	}
 }

@@ -19,7 +19,6 @@
             <menu:item id="i_document_new" messageCode="global_menu_new" url="/documents?form" z="bv1eg7qAwaBE1ATd78QiQm2M3ZE="/>
             <menu:item id="i_document_list" messageCode="global_menu_list" url="/documents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="p196XK4gvGXOnIrUwDqNS/p7fzE="/>
             <menu:item id="document_finder_template" messageCode="global_menu_find_custom1" url="/documents?find=ByTemplate&amp;form" z="user-managed"/>
-            <menu:item id="fi_document_oggettolikeornumeroprotocollolikeortipoprotocolloordataprotocollobetweenorstrutturaorprogettoorcontatto" messageCode="global_menu_find" url="/documents?find=ByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto&amp;form" z="DGGQzsGYG6PKr4/MDYwx7swTt0g="/>
         </menu:category>
     </menu:menu>
 </div>
