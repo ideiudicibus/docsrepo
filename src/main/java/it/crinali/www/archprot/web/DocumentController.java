@@ -7,6 +7,8 @@ import it.crinali.www.archprot.domain.TipoProtocollo;
 import it.crinali.www.archprot.service.ThumbnailService;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
@@ -14,7 +16,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -108,6 +109,28 @@ public class DocumentController {
         	
         	e.printStackTrace();
         }
+        FileOutputStream fout=null;
+		try {
+			
+		String destination=File.separatorChar+"tmp"+File.separatorChar+"webdav"+File.separatorChar+document.getProgetto().getDescrizione()+File.separatorChar +document.getStruttura().getDescrizione()+File.separatorChar+document.getTipoProtocollo()+File.separatorChar;
+			File theDir = new File(destination); 
+			if (!theDir.exists()) 
+				{
+				theDir.mkdirs();
+				}
+        
+			fout=new FileOutputStream(new File(destination+content.getOriginalFilename()));
+			IOUtils.copy(new ByteArrayInputStream(content.getBytes()), fout);
+			fout.close();
+			fout=null;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			if(fout!=null) {
+				fout=null;
+			}
+			e.printStackTrace();
+		}
+		
         return "redirect:/documents?page=1&size=10" + encodeUrlPathSegment(document.getId().toString(), request);
     }
     
@@ -386,7 +409,26 @@ public class DocumentController {
 
         return q;
     }*/
-    
+//    private void writeFully(final AsynchronousFileChannel ch, final ByteBuffer src, long filePosition)
+//			throws InterruptedException {
+//		final CountDownLatch latch = new CountDownLatch(1);
+//		
+//		
+//		ch.write(src, filePosition, filePosition,new CompletionHandler<Integer, Long>() {
+//			public void completed(Integer bytesTransferred, Long filePosition) {
+//				if (src.hasRemaining()) {
+//					long newFilePosition = filePosition + bytesTransferred;
+//					ch.write(src, newFilePosition);
+//				} else {
+//					latch.countDown();
+//				}
+//			}
+// 
+//			public void failed(Throwable exc, Long position) {
+//			}
+//		});
+//		latch.await();
+//	}
 }
 
 

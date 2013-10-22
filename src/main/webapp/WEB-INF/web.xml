@@ -89,6 +89,44 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+		<servlet-name>webdav</servlet-name>
+		<servlet-class>
+			net.sf.webdav.WebdavServlet
+		</servlet-class>
+		<init-param>
+		<description>
+				name of the class that implements
+				net.sf.webdav.WebdavStore
+			</description>
+			<param-name>ResourceHandlerImplementation</param-name>
+			<param-value>
+				net.sf.webdav.LocalFileSystemStore
+			</param-value>
+			
+		</init-param>
+		<init-param>
+		<description>
+				folder where webdavcontent on the local filesystem is stored
+			</description>
+			<param-name>rootpath</param-name>
+			<param-value>/tmp/webdav</param-value>
+			
+		</init-param>
+		<init-param>
+		<description>
+				triggers debug output of the
+				ResourceHandlerImplementation (0 = off , 1 = on) off by default
+			</description>
+			<param-name>storeDebug</param-name>
+			<param-value>1</param-value>
+			
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>webdav</servlet-name>
+		<url-pattern>/repository/*</url-pattern>
+	</servlet-mapping>
     
     
     <servlet-mapping>
