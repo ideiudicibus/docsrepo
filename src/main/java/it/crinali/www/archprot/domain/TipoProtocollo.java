@@ -1,8 +1,18 @@
 package it.crinali.www.archprot.domain;
-import javax.persistence.Enumerated;
+import javax.persistence.Column;
 
-public enum TipoProtocollo {
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.tostring.RooToString;
 
-    ENTRATA, USCITA,NESSUNO;
+@RooJavaBean
+@RooToString
+@RooJpaActiveRecord
+public class TipoProtocollo {
 
+    /**
+     */
+    @Column(unique = true)
+    private String descrizione;
+    
 }

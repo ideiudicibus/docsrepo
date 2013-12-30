@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_it_crinali_www_archprot_domain_Destinatario" modelAttribute="destinatario" path="/destinatarios" versionField="Version" z="ASg/Niu36JGTvCZ+N8c817Zd4ts=">
+        <field:input field="ragioneSociale" id="c_it_crinali_www_archprot_domain_Destinatario_ragioneSociale" required="true" z="nnRswtqS5NRxDcXnxEyKBQcmU+E="/>
+        <field:input field="pIvaCodiceFiscale" id="c_it_crinali_www_archprot_domain_Destinatario_pIvaCodiceFiscale" z="J9+zElCWcTsKhjucUaHcsjnG9AU="/>
+        <field:input field="note" id="c_it_crinali_www_archprot_domain_Destinatario_note" z="t5Y9/9JW71F093Bih8CFbe/ikGA="/>
+        <field:select field="documenti" id="c_it_crinali_www_archprot_domain_Destinatario_documenti" itemValue="id" items="${documents}" multiple="true" path="/documents" z="0TXkDZqSXIzSz8C1Xu2Zntwe5Xo="/>
+    </form:update>
+</div>

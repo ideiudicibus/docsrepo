@@ -203,3 +203,75 @@ exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-22 15:49:17
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-22 16:21:21
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-22 16:23:58
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-11 14:25:23
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-11 14:27:11
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-11 18:32:07
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-11 18:50:28
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-11 18:57:57
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-11 18:58:03
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-12 13:04:02
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-12 15:20:56
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-14 15:59:49
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-14 16:05:30
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-14 16:06:04
+persistence setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT --databaseName docsrepo
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-14 16:13:26
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-20 16:22:20
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-21 15:06:38
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-21 15:08:33
+web mvc all --package it.crinali.www.archprot.web
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-21 15:09:39
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-21 15:09:51
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-21 15:13:28
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-21 18:11:08
+web mvc all --package it.crinali.www.archprot.web
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-21 18:13:51
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 09:11:26
+osgi start --url http://spring-roo-addons.googlecode.com/files/net.tzolov.jetty.executable.war.roo.addon-2.0.0.jar 
+osgi ps
+// [failed] executable war setup
+// [failed] executable war setup
+perform assembly
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-22 09:17:20
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 09:20:09
+// [failed] executable war setup
+pgp trust --keyId 0xACB27429
+// [failed] executable war setup
+osgi start --url http://spring-roo-addons.googlecode.com/files/net.tzolov.jetty.executable.war.roo.addon-2.0.0.jar
+osgi ps
+// [failed] executable war setup
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-22 09:25:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 09:31:43
+osgi start --url http://spring-roo-addons.googlecode.com/files/net.tzolov.jetty.executable.war.roo.addon-2.0.0.jar
+osgi ps
+osgi uninstall --bundleSymbolicName net.tzolov.jetty.executable.war.roo.addon
+osgi ps
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-22 13:00:39
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 14:27:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 14:35:35
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-22 14:36:52
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 14:36:59
+web mvc all --package it.crinali.www.archprot.web
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-22 14:38:14
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-23 08:59:32
+controller scaffold --class ~.web.JsonApiController --entity ~.domain.Document --path /api
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-23 10:04:03
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-23 23:29:23
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-27 18:19:46
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-27 18:20:12

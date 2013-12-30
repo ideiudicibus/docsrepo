@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_crinali_www_archprot_domain_Destinatario" object="${destinatario}" path="/destinatarios" z="RR4B6XT1OtsuCfGFUXCS5DCDN1A=">
+        <field:display field="ragioneSociale" id="s_it_crinali_www_archprot_domain_Destinatario_ragioneSociale" object="${destinatario}" z="TgiGek/Z41zOFqumwohYkqvY4Uo="/>
+        <field:display field="PIvaCodiceFiscale" id="s_it_crinali_www_archprot_domain_Destinatario_pIvaCodiceFiscale" object="${destinatario}" z="JnzQPBQia+WDw8H8piHuI2+BorY="/>
+        <field:display field="note" id="s_it_crinali_www_archprot_domain_Destinatario_note" object="${destinatario}" z="FOo96NQpOqFN6h6rFt9CHAiakxM="/>
+        <field:display field="documenti" id="s_it_crinali_www_archprot_domain_Destinatario_documenti" object="${destinatario}" z="dfHni0CKqy23HAUyjdLmtiuPHD4="/>
+    </page:show>
+</div>

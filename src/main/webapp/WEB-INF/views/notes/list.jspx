@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_it_crinali_www_archprot_domain_Note" items="${notes}" z="uC5KVrxsvupzMM8vXasfIQlNors=">
+        <table:table data="${notes}" id="l_it_crinali_www_archprot_domain_Note" path="/notes" z="R+aF6qO4cJjRKqK0lVIADjNVk+E=">
+            <table:column id="c_it_crinali_www_archprot_domain_Note_testo" property="testo" z="DDQEGFTAii/cLlL6i9vulIv1324="/>
+        </table:table>
+    </page:list>
+</div>

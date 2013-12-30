@@ -25,9 +25,6 @@
 <definition extends="default" name="documents/findDocumentsByNumeroProtocolloLikeAndTipoProtocolloLikeAndStrutturaLikeAndProgettoLikeAndOggettoLikeAndContattoLikeAndDataProtocolloBetween">
         <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByNumeroProtocolloLikeAndTipoProtocolloLikeAndStrutturaLikeAndProgettoLikeAndOggettoLikeAndContattoLikeAndDataProtocolloBetween.jspx"/>
     </definition>
-<definition extends="default" name="documents/findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto">
-        <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto.jspx"/>
-    </definition>
 <definition extends="default" name="documents/findDocumentsByTemplate">
         <put-attribute name="body" value="/WEB-INF/views/documents/findDocumentsByTemplate.jspx"/>
     </definition>

@@ -4,9 +4,13 @@
 package it.crinali.www.archprot.web;
 
 import it.crinali.www.archprot.domain.Contatto;
+import it.crinali.www.archprot.domain.Destinatario;
 import it.crinali.www.archprot.domain.Document;
+import it.crinali.www.archprot.domain.Note;
 import it.crinali.www.archprot.domain.Progetto;
 import it.crinali.www.archprot.domain.Struttura;
+import it.crinali.www.archprot.domain.TipoComunicazione;
+import it.crinali.www.archprot.domain.TipoProtocollo;
 import it.crinali.www.archprot.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -40,6 +44,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Destinatario, String> ApplicationConversionServiceFactoryBean.getDestinatarioToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.crinali.www.archprot.domain.Destinatario, java.lang.String>() {
+            public String convert(Destinatario destinatario) {
+                return new StringBuilder().append(destinatario.getRagioneSociale()).append(' ').append(destinatario.getPIvaCodiceFiscale()).append(' ').append(destinatario.getNote()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Destinatario> ApplicationConversionServiceFactoryBean.getIdToDestinatarioConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, it.crinali.www.archprot.domain.Destinatario>() {
+            public it.crinali.www.archprot.domain.Destinatario convert(java.lang.Long id) {
+                return Destinatario.findDestinatario(id);
+            }
+        };
+    }
+    
+    public Converter<String, Destinatario> ApplicationConversionServiceFactoryBean.getStringToDestinatarioConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.crinali.www.archprot.domain.Destinatario>() {
+            public it.crinali.www.archprot.domain.Destinatario convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Destinatario.class);
+            }
+        };
+    }
+    
     public Converter<Document, String> ApplicationConversionServiceFactoryBean.getDocumentToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<it.crinali.www.archprot.domain.Document, java.lang.String>() {
             public String convert(Document document) {
@@ -60,6 +88,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, it.crinali.www.archprot.domain.Document>() {
             public it.crinali.www.archprot.domain.Document convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Document.class);
+            }
+        };
+    }
+    
+    public Converter<Note, String> ApplicationConversionServiceFactoryBean.getNoteToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.crinali.www.archprot.domain.Note, java.lang.String>() {
+            public String convert(Note note) {
+                return new StringBuilder().append(note.getTesto()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Note> ApplicationConversionServiceFactoryBean.getIdToNoteConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, it.crinali.www.archprot.domain.Note>() {
+            public it.crinali.www.archprot.domain.Note convert(java.lang.Long id) {
+                return Note.findNote(id);
+            }
+        };
+    }
+    
+    public Converter<String, Note> ApplicationConversionServiceFactoryBean.getStringToNoteConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.crinali.www.archprot.domain.Note>() {
+            public it.crinali.www.archprot.domain.Note convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Note.class);
             }
         };
     }
@@ -112,19 +164,79 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<TipoComunicazione, String> ApplicationConversionServiceFactoryBean.getTipoComunicazioneToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.crinali.www.archprot.domain.TipoComunicazione, java.lang.String>() {
+            public String convert(TipoComunicazione tipoComunicazione) {
+                return new StringBuilder().append(tipoComunicazione.getDescrizione()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, TipoComunicazione> ApplicationConversionServiceFactoryBean.getIdToTipoComunicazioneConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, it.crinali.www.archprot.domain.TipoComunicazione>() {
+            public it.crinali.www.archprot.domain.TipoComunicazione convert(java.lang.Long id) {
+                return TipoComunicazione.findTipoComunicazione(id);
+            }
+        };
+    }
+    
+    public Converter<String, TipoComunicazione> ApplicationConversionServiceFactoryBean.getStringToTipoComunicazioneConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.crinali.www.archprot.domain.TipoComunicazione>() {
+            public it.crinali.www.archprot.domain.TipoComunicazione convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), TipoComunicazione.class);
+            }
+        };
+    }
+    
+    public Converter<TipoProtocollo, String> ApplicationConversionServiceFactoryBean.getTipoProtocolloToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.crinali.www.archprot.domain.TipoProtocollo, java.lang.String>() {
+            public String convert(TipoProtocollo tipoProtocollo) {
+                return new StringBuilder().append(tipoProtocollo.getDescrizione()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, TipoProtocollo> ApplicationConversionServiceFactoryBean.getIdToTipoProtocolloConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, it.crinali.www.archprot.domain.TipoProtocollo>() {
+            public it.crinali.www.archprot.domain.TipoProtocollo convert(java.lang.Long id) {
+                return TipoProtocollo.findTipoProtocollo(id);
+            }
+        };
+    }
+    
+    public Converter<String, TipoProtocollo> ApplicationConversionServiceFactoryBean.getStringToTipoProtocolloConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.crinali.www.archprot.domain.TipoProtocollo>() {
+            public it.crinali.www.archprot.domain.TipoProtocollo convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), TipoProtocollo.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getContattoToStringConverter());
         registry.addConverter(getIdToContattoConverter());
         registry.addConverter(getStringToContattoConverter());
+        registry.addConverter(getDestinatarioToStringConverter());
+        registry.addConverter(getIdToDestinatarioConverter());
+        registry.addConverter(getStringToDestinatarioConverter());
         registry.addConverter(getDocumentToStringConverter());
         registry.addConverter(getIdToDocumentConverter());
         registry.addConverter(getStringToDocumentConverter());
+        registry.addConverter(getNoteToStringConverter());
+        registry.addConverter(getIdToNoteConverter());
+        registry.addConverter(getStringToNoteConverter());
         registry.addConverter(getProgettoToStringConverter());
         registry.addConverter(getIdToProgettoConverter());
         registry.addConverter(getStringToProgettoConverter());
         registry.addConverter(getStrutturaToStringConverter());
         registry.addConverter(getIdToStrutturaConverter());
         registry.addConverter(getStringToStrutturaConverter());
+        registry.addConverter(getTipoComunicazioneToStringConverter());
+        registry.addConverter(getIdToTipoComunicazioneConverter());
+        registry.addConverter(getStringToTipoComunicazioneConverter());
+        registry.addConverter(getTipoProtocolloToStringConverter());
+        registry.addConverter(getIdToTipoProtocolloConverter());
+        registry.addConverter(getStringToTipoProtocolloConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

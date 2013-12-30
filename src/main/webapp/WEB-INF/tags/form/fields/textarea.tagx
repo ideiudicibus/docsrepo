@@ -46,7 +46,8 @@
     	
     <br />
           <script type="text/javascript">
-		$('#_${sec_field}_id').css('width','450px');
+          
+		$('[name="${sec_field}"]').css('width','450px');
          </script>
 
   </c:if>

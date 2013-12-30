@@ -19,7 +19,22 @@
             <menu:item id="i_document_new" messageCode="global_menu_new" url="/documents?form" z="bv1eg7qAwaBE1ATd78QiQm2M3ZE="/>
             <menu:item id="i_document_list" messageCode="global_menu_list" url="/documents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="p196XK4gvGXOnIrUwDqNS/p7fzE="/>
             <menu:item id="document_finder_template" messageCode="global_menu_find_custom1" url="/documents?find=ByTemplate&amp;form" z="user-managed"/>
-            <menu:item id="fi_document_oggettolikeornumeroprotocollolikeortipoprotocolloordataprotocollobetweenorstrutturaorprogettoorcontatto" messageCode="global_menu_find" url="/documents?find=ByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto&amp;form" z="DGGQzsGYG6PKr4/MDYwx7swTt0g="/>
+        </menu:category>
+        <menu:category id="c_note" z="9h2hsuneSrocx9jL7zHkTKVuHy8=">
+            <menu:item id="i_note_new" messageCode="global_menu_new" url="/notes?form" z="oYBQPPA8gC477hQQZwvFgzKbD6o="/>
+            <menu:item id="i_note_list" messageCode="global_menu_list" url="/notes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="FTO+GmUarl6QwFawad+RFkRN43I="/>
+        </menu:category>
+        <menu:category id="c_tipoprotocollo" z="9jhXOceO4glZXYKOKPViAytIPdI=">
+            <menu:item id="i_tipoprotocollo_new" messageCode="global_menu_new" url="/tipoprotocolloes?form" z="P0LXmUAv2cEFVKIAnT/yE/QgSq0="/>
+            <menu:item id="i_tipoprotocollo_list" messageCode="global_menu_list" url="/tipoprotocolloes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="skIYtOmuQx/a6jYKOI8gGueftUk="/>
+        </menu:category>
+        <menu:category id="c_tipocomunicazione" z="spkEtwjTrmEXCmxEbY/qruxgm/Q=">
+            <menu:item id="i_tipocomunicazione_new" messageCode="global_menu_new" url="/tipocomunicaziones?form" z="8j8gCvVjF3Y/AhpKrnQw0nLSdvQ="/>
+            <menu:item id="i_tipocomunicazione_list" messageCode="global_menu_list" url="/tipocomunicaziones?page=1&amp;size=${empty param.size ? 10 : param.size}" z="+gvnGSeNCKI8yRGtHbXE5vt+N8M="/>
+        </menu:category>
+        <menu:category id="c_destinatario" z="qJJDkz6TF0feJLZ49xxAA0WjpO4=">
+            <menu:item id="i_destinatario_new" messageCode="global_menu_new" url="/destinatarios?form" z="jxmEzlSScEIJbHlzqd7X9dXNdv0="/>
+            <menu:item id="i_destinatario_list" messageCode="global_menu_list" url="/destinatarios?page=1&amp;size=${empty param.size ? 10 : param.size}" z="csMevIXEf77cYHJ0FoceTdIF/yM="/>
         </menu:category>
     </menu:menu>
 </div>

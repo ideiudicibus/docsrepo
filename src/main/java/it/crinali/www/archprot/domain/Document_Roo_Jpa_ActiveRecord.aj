@@ -32,7 +32,7 @@ privileged aspect Document_Roo_Jpa_ActiveRecord {
         if (id == null) return null;
         return entityManager().find(Document.class, id);
     }
-    
+        
     public static List<Document> Document.findDocumentEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Document o", Document.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_it_crinali_www_archprot_domain_Destinatario" items="${destinatarios}" z="/RFx/kIRvHkPtm9RaGb+f2lRDkU=">
+        <table:table data="${destinatarios}" id="l_it_crinali_www_archprot_domain_Destinatario" path="/destinatarios" z="CXNrrSOBliTdkxg8N5kmPKYUESU=">
+            <table:column id="c_it_crinali_www_archprot_domain_Destinatario_ragioneSociale" property="ragioneSociale" z="JoDXKeSs6n1xU6hUhpB9wyXzOmE="/>
+            <table:column id="c_it_crinali_www_archprot_domain_Destinatario_pIvaCodiceFiscale" property="PIvaCodiceFiscale" z="FPMgF+gULnPWawQWf056TKpuA9U="/>
+            <table:column id="c_it_crinali_www_archprot_domain_Destinatario_note" property="note" z="encRG8FwgkpX7MBWMGoNHU2vEDY="/>
+            <table:column id="c_it_crinali_www_archprot_domain_Destinatario_documenti" property="documenti" z="T2St610oYZpm3vQihTwcdE4xFBo="/>
+        </table:table>
+    </page:list>
+</div>

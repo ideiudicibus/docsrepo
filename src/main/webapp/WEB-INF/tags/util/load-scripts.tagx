@@ -32,12 +32,15 @@
   <spring:url value="/resources/js/bootstrap-filestyle.min.js" var="bootstrap_filestyle_js_url" />
   <script src="${bootstrap_filestyle_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
  
-
+  <spring:url value="/resources/js/typeahead.min.js" var="typeahead_js_url" />
+  <script src="${typeahead_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
  
  <spring:url value="/resources/js/jquery.linkify-1.0-min.js" var="jquery_linkify_js_url" />
   <script src="${jquery_linkify_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
  
-  
+ <spring:url value="/resources/js/app.js" var="app_js_url" />
+ <script src="${app_js_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+ 
 
   <link rel="stylesheet" type="text/css" media="screen" href="${roo_css_url}" />
   <!-- Get the user local from the page context (it was set by Spring MVC's locale resolver) -->

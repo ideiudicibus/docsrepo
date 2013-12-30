@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:find finderName="ByTemplate" id="ff_it_crinali_www_archprot_domain_Document"  path="/documents" z="QJh2vOPuahERy3C6JsdAlAmSzqw=">
+        <field:input disableFormBinding="true" field="oggetto" id="f_it_crinali_www_archprot_domain_Document_oggetto" max="100" required="false" z="SQtR7E7sTlTGhCbUdjorCYRg19g="/>
+        <field:input disableFormBinding="true" field="numeroProtocollo" id="f_it_crinali_www_archprot_domain_Document_numeroProtocollo" required="false" z="NtH/lt/2yl6kG7FT1/9Dxp/JJxQ="/>
+        <field:select disableFormBinding="true" field="tipoProtocollo" id="f_it_crinali_www_archprot_domain_Document_tipoProtocollo" items="${tipoprotocolloes}" path="/tipoprotocolloes" required="true" z="guIQdZv1omPML+frZN1qzHb0yqI="/>
+        <field:datetime dateTimePattern="${document_dataprotocollo_date_format}" disableFormBinding="true" field="minDataProtocollo" id="f_it_crinali_www_archprot_domain_Document_minDataProtocollo" required="false" z="U9K64Yu2RP1len4cJKL/I6lRSaU="/>
+        <field:datetime dateTimePattern="${document_dataprotocollo_date_format}" disableFormBinding="true" field="maxDataProtocollo" id="f_it_crinali_www_archprot_domain_Document_maxDataProtocollo" required="false" z="1kBmxZ18axK/xRNnkWPv7fjjxUQ="/>
+        <field:select disableFormBinding="true" field="struttura" id="f_it_crinali_www_archprot_domain_Document_struttura" itemValue="id" items="${strutturas}" path="/strutturas" required="true" z="4h/KiZDVNBcBUnCwfedrTgJtPPk="/>
+        <field:select disableFormBinding="true" field="progetto" id="f_it_crinali_www_archprot_domain_Document_progetto" itemValue="id" items="${progettoes}" path="/progettoes" required="true" z="G/Q/h1wQBVRP7kcu3FiXflbp0Jg="/>
+        <field:select disableFormBinding="true" field="contatto" id="f_it_crinali_www_archprot_domain_Document_contatto" itemValue="id" items="${contattoes}" path="/contattoes" required="true" z="+iwhhaQQEB3H10q2yhzL9t0Nzt0="/>
+    </form:find>
+</div>

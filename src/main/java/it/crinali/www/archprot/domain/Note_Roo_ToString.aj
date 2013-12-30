@@ -3,13 +3,13 @@
 
 package it.crinali.www.archprot.domain;
 
-import it.crinali.www.archprot.domain.Document;
+import it.crinali.www.archprot.domain.Note;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-privileged aspect Document_Roo_ToString {
+privileged aspect Note_Roo_ToString {
     
-    public String Document.toString() {
+    public String Note.toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     

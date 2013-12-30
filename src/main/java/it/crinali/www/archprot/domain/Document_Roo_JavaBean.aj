@@ -4,11 +4,15 @@
 package it.crinali.www.archprot.domain;
 
 import it.crinali.www.archprot.domain.Contatto;
+import it.crinali.www.archprot.domain.Destinatario;
 import it.crinali.www.archprot.domain.Document;
+import it.crinali.www.archprot.domain.Note;
 import it.crinali.www.archprot.domain.Progetto;
 import it.crinali.www.archprot.domain.Struttura;
+import it.crinali.www.archprot.domain.TipoComunicazione;
 import it.crinali.www.archprot.domain.TipoProtocollo;
 import java.util.Date;
+import java.util.Set;
 
 privileged aspect Document_Roo_JavaBean {
     
@@ -36,6 +40,22 @@ privileged aspect Document_Roo_JavaBean {
         this.tipoProtocollo = tipoProtocollo;
     }
     
+    public TipoComunicazione Document.getTipoComunicazione() {
+        return this.tipoComunicazione;
+    }
+    
+    public void Document.setTipoComunicazione(TipoComunicazione tipoComunicazione) {
+        this.tipoComunicazione = tipoComunicazione;
+    }
+    
+    public Note Document.getNote() {
+        return this.note;
+    }
+    
+    public void Document.setNote(Note note) {
+        this.note = note;
+    }
+    
     public Progetto Document.getProgetto() {
         return this.progetto;
     }
@@ -58,6 +78,14 @@ privileged aspect Document_Roo_JavaBean {
     
     public void Document.setContatto(Contatto contatto) {
         this.contatto = contatto;
+    }
+    
+    public Set<Destinatario> Document.getDestinatari() {
+        return this.destinatari;
+    }
+    
+    public void Document.setDestinatari(Set<Destinatario> destinatari) {
+        this.destinatari = destinatari;
     }
     
     public String Document.getNomeFile() {
@@ -114,6 +142,14 @@ privileged aspect Document_Roo_JavaBean {
     
     public void Document.setDataProtocollo(Date dataProtocollo) {
         this.dataProtocollo = dataProtocollo;
+    }
+    
+    public String Document.getPath() {
+        return this.path;
+    }
+    
+    public void Document.setPath(String path) {
+        this.path = path;
     }
     
 }

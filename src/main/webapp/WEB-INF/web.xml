@@ -100,9 +100,10 @@
 				net.sf.webdav.WebdavStore
 			</description>
 			<param-name>ResourceHandlerImplementation</param-name>
-			<param-value>
-				net.sf.webdav.LocalFileSystemStore
-			</param-value>
+			<!-- database store it.crinali.www.archtprot.store.DatabaseStore
+			net.sf.webdav.LocalFileSystemStore
+			 -->
+			<param-value>it.crinali.www.archtprot.store.DatabaseStore</param-value>
 			
 		</init-param>
 		<init-param>
@@ -136,6 +137,18 @@
     <session-config>
         <session-timeout>10</session-timeout>
     </session-config>
+    
+    
+    <servlet>
+		<servlet-name>H2Console</servlet-name>
+		<servlet-class>org.h2.server.web.WebServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>H2Console</servlet-name>
+		<url-pattern>/dbconsole/*</url-pattern>
+	</servlet-mapping>
+    
     
     <error-page>
         <exception-type>java.lang.Exception</exception-type>

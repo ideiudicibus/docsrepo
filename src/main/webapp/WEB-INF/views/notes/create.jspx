@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_it_crinali_www_archprot_domain_Note" modelAttribute="note" path="/notes" render="${empty dependencies}" z="F4DAvsg+uEXdQQYB0Fy/eRAIE5E=">
+        <field:input field="testo" id="c_it_crinali_www_archprot_domain_Note_testo" z="eW5ssW5UwlF5ApqXqyojMtDA+gg="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_it_crinali_www_archprot_domain_Note" render="${not empty dependencies}" z="eHNq+FSElg+yubiwk77+IXMh3Ng="/>
+</div>

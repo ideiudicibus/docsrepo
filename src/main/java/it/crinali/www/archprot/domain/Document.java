@@ -1,29 +1,36 @@
 package it.crinali.www.archprot.domain;
+import java.lang.reflect.Field;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Basic;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Query;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.roo.classpath.operations.jsr303.RooUploadedFile;
 
+/**
+ * 
+ * @author ignazio
+ * tipologia comunicazioni (entità) convocazioni,  
+ * lista destinatari 
+ * in ricerca inserire OR Logico
+ */
 @RooJavaBean
-@RooToString
-@RooJpaActiveRecord(finders = {"findDocumentsByOggettoLikeOrNumeroProtocolloLikeOrTipoProtocolloOrDataProtocolloBetweenOrStrutturaOrProgettoOrContatto" })
+@RooJpaActiveRecord
 @DynamicUpdate
 public class Document {
     /**
@@ -39,9 +46,20 @@ public class Document {
 
     /**
      */
-    @Enumerated
     @NotNull
+    @OneToOne
     private TipoProtocollo tipoProtocollo;
+    
+    /**
+     */
+    @OneToOne
+    private TipoComunicazione tipoComunicazione;
+    
+    
+    /**
+     */
+    @OneToOne
+    private Note note;
 
     /**
      */
@@ -60,6 +78,11 @@ public class Document {
     @NotNull
     @OneToOne
     private Contatto contatto;
+    
+    /**
+     */
+    @ManyToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST, javax.persistence.CascadeType.REFRESH })
+    private Set<Destinatario> destinatari = new HashSet<Destinatario>();
 
     /**
      */
@@ -70,9 +93,10 @@ public class Document {
     private Long size;
     /**
      */
+    @NotNull
+    @NotEmpty
     @Lob
     @Basic(fetch = FetchType.LAZY)
-    @NotNull
     private byte[] content;
     /**
      */
@@ -94,12 +118,20 @@ public class Document {
     @DateTimeFormat(style = "M-")
     @NotNull
     private Date dataProtocollo;
-
-	public static Query findDocumentsByTemplate(String oggetto,
-			String numeroProtocollo, TipoProtocollo tipoProtocollo,
-			Date minDataProtocollo, Date maxDataProtocollo,
-			Struttura struttura, Progetto progetto, Contatto contatto) {
-		return null;
-		
-	}
+    
+    
+    @Size(max = 255)
+    private String path;
+    
+    
+   @Override
+    public String toString() {
+    	     return (new ReflectionToStringBuilder(this) {
+    	         protected boolean accept(Field f) {
+    	             return super.accept(f) && !f.getName().equals("content") &&  !f.getName().equals("thumbnail");
+    	         }
+    	     }).toString();
+    	 }
+    	
+    
 }

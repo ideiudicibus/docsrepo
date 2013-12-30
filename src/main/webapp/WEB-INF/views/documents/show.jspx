@@ -6,18 +6,23 @@
         <field:display field="oggetto" id="s_it_crinali_www_archprot_domain_Document_oggetto" object="${document}" z="2qHCb9dTH2EPq2W4bIHv2T2yYPM="/>
         <field:display field="numeroProtocollo" id="s_it_crinali_www_archprot_domain_Document_numeroProtocollo" object="${document}" z="GiMw6hOS5ocgoX+Cl3b3ukhLk6o="/>
         <field:display field="tipoProtocollo" id="s_it_crinali_www_archprot_domain_Document_tipoProtocollo" object="${document}" z="2eVovg70Tdq5hrlaRV+6glRmZ6Q="/>
+        <field:display field="tipoComunicazione" id="s_it_crinali_www_archprot_domain_Document_tipoComunicazione" object="${document}" z="lj/3MHY4m1w2j+kWSvkulqNw86w="/>
         <field:display field="progetto" id="s_it_crinali_www_archprot_domain_Document_progetto" object="${document}" z="LNTizmpl67vt4DTcDCIxMgHw3oo="/>
         <field:display field="struttura" id="s_it_crinali_www_archprot_domain_Document_struttura" object="${document}" z="l9vfHG9Zw+csrxqwHmHBqm7Ng78="/>
         <field:display field="contatto" id="s_it_crinali_www_archprot_domain_Document_contatto" object="${document}" z="eOhYo+vCBPLHqmuWDoy/gv72q4Q="/>
+        <field:displayList field="destinatari" id="s_it_crinali_www_archprot_domain_Document_destinatari" object="${document}" z="l+NiDOiP+HcWMl9DRmCTYUaY1zI="/>
         <field:display field="nomeFile" id="s_it_crinali_www_archprot_domain_Document_nomeFile" object="${document}" z="YM42fl0Pvh8NJawCT6DHGqArtQ4="/>
-        <field:display field="contentType" id="s_it_crinali_www_archprot_domain_Document_contentType" object="${document}" z="Oi3WQfIUrpPWtG9KHWABsLoGhlU="/>
+        <field:display field="contentType" id="s_it_crinali_www_archprot_domain_Document_contentType" object="${document}" render="false" z="user-managed"/>
         <field:display field="size" id="s_it_crinali_www_archprot_domain_Document_size" object="${document}" z="XZ5ASKtdUUtNtLQxK3oTOEwpCOo="/>
-        <field:display field="content" id="s_it_crinali_www_archprot_domain_Document_content" object="${document}" render="false" z="user-managed"/>
+        <!-- <field:display field="content" id="s_it_crinali_www_archprot_domain_Document_content" object="${document}" render="false" z="user-managed"/> -->
         <field:display date="true" dateTimePattern="${document_dataprotocollo_date_format}" field="dataProtocollo" id="s_it_crinali_www_archprot_domain_Document_dataProtocollo" object="${document}" z="fkGNlkz0l+wDLtZ+Ouj0GjWHF0I="/>
         <field:display field="url" id="href_s_it_crinali_www_archprot_domain_Document_url" label="Scarica documento" object="${document}" z="user-managed"/>
+        <!--  <field:display field="path" id="s_it_crinali_www_archprot_domain_Document_path" object="${document}" z="lqLqZTT0HmGzOOjvqnZEFLM7KuA="/>
+        -->
         <!-- <field:frame field="url" id="s_it_crinali_www_archprot_domain_Document_url" label="Documento" object="${document}" z="user-managed"/>-->
         <field:frameParametricSource field="thumbnail" id="s_it_crinali_www_archprot_domain_Document_thumbnail" label="Documento" object="${document}" sourceService="previewdoc" z="user-managed"/>
+        <field:display field="note" id="s_it_crinali_www_archprot_domain_Document_note" object="${document}" z="cfHXkGXxcpFNx2lSv3NZOFJ52Bg="/>
         <field:display field="url" id="s_it_crinali_www_archprot_domain_Document_url" object="${document}" z="133jHO+zR3Q8wUit9zQ+fNfwbnU="/>
+        <field:display field="path" id="s_it_crinali_www_archprot_domain_Document_path" object="${document}" z="lqLqZTT0HmGzOOjvqnZEFLM7KuA="/>
     </page:show>
-
 </div>
