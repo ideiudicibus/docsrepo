@@ -93,12 +93,15 @@
           </c:forTokens>
           <c:set var="itemId"><spring:eval expression="item[typeIdFieldName]"/></c:set>
           <td class="utilbox">
+            <!--               <img alt="${fn:escapeXml(show_label)}" class="btn btn-info" src="${show_image_url}" title="${fn:escapeXml(show_label)}" />
+            test
+            </a>
+             -->
             <spring:url value="${path}/${itemId}" var="show_form_url" />
             <spring:url value="/resources/images/show.png" var="show_image_url" />
             <spring:message arguments="${typeName}" code="entity_show" var="show_label" htmlEscape="false" />
-            <a href="${show_form_url}" alt="${fn:escapeXml(show_label)}" title="${fn:escapeXml(show_label)}">
-              <img alt="${fn:escapeXml(show_label)}" class="btn btn-info" src="${show_image_url}" title="${fn:escapeXml(show_label)}" />
-            </a>
+			<a href="${show_form_url}" alt="${fn:escapeXml(show_label)}" title="${fn:escapeXml(show_label)}">
+         <span class="glyphicon glyphicon-eye-open btn btn-default">${fn:escapeXml(" ")}</span></a>
           </td>
           <c:if test="${update}">
             <td class="utilbox">
@@ -108,22 +111,28 @@
               <spring:url value="/resources/images/update.png" var="update_image_url" />
               <spring:message arguments="${typeName}" code="entity_update" var="update_label" htmlEscape="false" />
               <a href="${update_form_url}" alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}">
-                <img alt="${fn:escapeXml(update_label)}" class="image btn btn-warning" src="${update_image_url}" title="${fn:escapeXml(update_label)}" />
+                <span class="glyphicon glyphicon-pencil btn btn-default">${fn:escapeXml(" ")}</span>
               </a>
             </td>
           </c:if>
           <c:if test="${delete}">
             <td class="utilbox">
               <spring:url value="${path}/${itemId}" var="delete_form_url" />
-              <spring:url value="/resources/images/delete.png" var="delete_image_url" />
-              <form:form action="${delete_form_url}" method="DELETE">
+              <spring:url value="/resources/images/FFFFFF-0.png" var="delete_image_url" />
+              <form:form action="${delete_form_url}" method="DELETE" id="delete_form_${itemId}">
                 <spring:message arguments="${typeName}" code="entity_delete" var="delete_label" htmlEscape="false" />
                 <c:set var="delete_confirm_msg">
                   <spring:escapeBody javaScriptEscape="true">
                     <spring:message code="entity_delete_confirm" />
                   </spring:escapeBody>
                 </c:set>
-                <input alt="${fn:escapeXml(delete_label)}" class="btn btn-danger" src="${delete_image_url}" title="${fn:escapeXml(delete_label)}" type="image" value="${fn:escapeXml(delete_label)}" onclick="return confirm('${delete_confirm_msg}');" />
+                <!-- 
+                <input alt="${fn:escapeXml(delete_label)}" class="glyphicon glyphicon-delete btn btn-default" src="${delete_image_url}" title="${fn:escapeXml(delete_label)}" type="hidden" value="${fn:escapeXml(delete_label)}" onclick="return confirm('${delete_confirm_msg}');" />
+                return confirm('${delete_confirm_msg}');
+                -->
+                <a href="#" alt="${fn:escapeXml(delete_label)}" title="${fn:escapeXml(delete_label)}" onclick="document.getElementById('delete_form_${itemId}').submit()">
+                <span class="glyphicon glyphicon-trash btn btn-default">${fn:escapeXml(" ")}</span>
+              	</a>
                 <c:if test="${not empty param.page}">
                   <input name="page" type="hidden" value="1" />
                 </c:if>
@@ -145,7 +154,9 @@
               <a href="${create_url}">
                 <spring:url value="/resources/images/add.png" var="create_img_url" />
                 <spring:message arguments="${typeName}" code="global_menu_new" var="add_message" htmlEscape="false" />
-                <img alt="${fn:escapeXml(add_message)}" class="btn btn-success" src="${create_img_url}" title="${fn:escapeXml(add_message)}" />
+               <!-- <img alt="${fn:escapeXml(add_message)}" class="btn btn-success" src="${create_img_url}" title="${fn:escapeXml(add_message)}" /> --> 
+    			<span class="glyphicon glyphicon-plus btn btn-default">${fn:escapeXml(" ")}</span>
+              	
               </a>
             </span>
             <c:out value=" " />
